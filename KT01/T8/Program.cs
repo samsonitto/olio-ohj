@@ -13,47 +13,27 @@ namespace T8
             while (true)
             {
 
-                Console.Write("Give a number: ");
-                string input1 = Console.ReadLine();
-                Console.Write("Give a number: ");
-                string input2 = Console.ReadLine();
-                Console.Write("Give a number: ");
-                string input3 = Console.ReadLine();
+                
+                int[] num = new int[3];
+                int x;
 
-                int n1, n2, n3;
+                for (int i = 0 ; i < 3 ; i++)
+                {
+                    Console.Write("Numero " + (i + 1) + " > ");
+                    num[i] = int.Parse(Console.ReadLine());
+                }
+                
+                for (int j = 1; j < 3; j++)
+                {
+                    if(num[j] > num[0])
+                    {
+                        x = num[0];
+                        num[0] = num[j];
+                        num [j] = num[0];
+                    }
+                }
 
-                int.TryParse(input1, out n1);
-                int.TryParse(input2, out n2);
-                int.TryParse(input3, out n3);
-
-                if (n1 > n2 && n2 > n3)
-                {
-                    Console.WriteLine("The biggest number is: " + n1);
-                }
-                if (n2 > n3 && n3 > n1)
-                {
-                    Console.WriteLine("The biggest number is: " + n2);
-                }
-                if (n3 > n2 && n2 > n1)
-                {
-                    Console.WriteLine("The biggest number is: " + n3);
-                }
-                if (n1 > n3 && n3 > n2)
-                {
-                    Console.WriteLine("The biggest number is: " + n1);
-                }
-                if (n2 > n1 && n1 > n3)
-                {
-                    Console.WriteLine("The biggest number is: " + n2);
-                }
-                if (n3 > n1 && n1 > n2)
-                {
-                    Console.WriteLine("The biggest number is: " + n3);
-                }
-                else
-                {
-                    Console.WriteLine("wut");
-                }
+                Console.WriteLine("Biggest number is: " + num[0]);
 
             }
         }
