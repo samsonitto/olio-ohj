@@ -15,10 +15,8 @@ namespace T5
 
             int b = 1;
             
-            for (int i = 0 ; i != hei ; i++)
+            for (int i = 0 ; i < (hei-2) ; i++)
             {
-
-
 
                 for (int a = hei - b; a > 0; a--)
                 {
@@ -26,11 +24,11 @@ namespace T5
                     
                 }
 
-                for (int j = 0; j <= i-2; j++)
+                for (int j = 0; j <= i; j++)
                 {
                     Console.Write("*");
                 }
-                for (int j = 0; j <= i-3; j++)
+                for (int j = 0; j <= i-1; j++)
                 {
                     Console.Write("*");
                 }
@@ -40,17 +38,19 @@ namespace T5
                 b++;
                 Console.WriteLine();
             }
+            
             for (int z = 0; z < 2; z++)
             {
-                for (int y = 0; y <=hei/2; y++)
+
+                for (int y = 0; y <hei-1; y++)
                 {
                     Console.Write(" ");
-
                 }
-                
-                    Console.WriteLine("*");
+
+                Console.WriteLine("*");
                 
             }
+            
 
         }
     }
