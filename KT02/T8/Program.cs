@@ -13,12 +13,12 @@ namespace T8
             Console.Write("Write a sentence: ");
             string sen, rev;
             sen = Console.ReadLine();
-            char[] ch = sen.ToCharArray();
+            char[] ch = sen.ToCharArray(); // muuttaa lauseen kirjaimiksi ja tallentaa ch taulukkoon
 
-            Array.Reverse(ch);
-            rev = new string(ch);
+            Array.Reverse(ch); // k‰‰ntt‰‰ taulukkoon tallennetut kirjaimet toiseen suuntaan
+            rev = new string(ch); // luo uuden merkkijonon k‰‰nnetyst‰ lauseesta
 
-            bool b = sen.Equals(rev, StringComparison.OrdinalIgnoreCase);
+            bool b = sen.Equals(rev, StringComparison.OrdinalIgnoreCase); // verttaa merkkijonot kesken‰‰n
 
             if (b == true)
             {
