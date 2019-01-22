@@ -19,25 +19,18 @@ namespace T1
 
         }
 
-        public void IncHum()
+        public void Loyly()
         {
             Humidity += 1;
-        }
-
-        public void LowHum()
-        {
-            Humidity -= 1;
-        }
-
-        public void IncHeat()
-        {
             Heat += 1;
         }
 
-        public void LowHeat()
+        public void Wait()
         {
+            Humidity -= 1;
             Heat -= 1;
         }
+
 
         public void PrintData()
         {

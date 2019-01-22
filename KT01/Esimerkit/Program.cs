@@ -160,7 +160,7 @@ namespace Taulukko
 
 
 //ESIM 5 "do while"
-
+/*
 using System;
 
 namespace Moi
@@ -178,6 +178,125 @@ namespace Moi
                 number = rand.Next(11);
                 Console.WriteLine(number);
             } while (number != 10);
+        }
+    }
+}
+*/
+
+// ESIM 6 "static members"
+/*
+using System;
+namespace Jamk.It
+{
+    public class Cat
+    {
+        // member can be accessed only via the constuctor (in this example)
+        private static int instances = 0;
+        public Cat()
+        {
+            // every time when an instance has been called we will increase the counter	
+            instances++;
+        }
+        public static void HowManyCats()
+        {
+            Console.WriteLine("{0} kissaa olemassa", instances);
+        }
+    }
+
+    public class TestCat
+    {
+        public static void Testaa()
+        {
+            Cat.HowManyCats();// should be zero in the beginning
+            Cat misse = new Cat();
+            Cat.HowManyCats();// should be 1
+            Cat tassu = new Cat();
+            Cat.HowManyCats();// should be 2
+        }
+    }
+
+    // start point
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            TestCat.Testaa();
+        }
+    }
+}
+*/
+
+// Esimerkki 7 Esimerkki staattisten metodien kutsumisesta
+
+using System;
+namespace Jamk.It
+{
+    public class Asker
+    {
+        // static method, scope public so it can be found outside of this class
+        public static string AskName()
+        {
+            Console.WriteLine("Give your name:");
+            string retval = Console.ReadLine();
+            return retval;
+        }
+
+        // overload static method
+        public static string AskName(string prompt)
+        {
+            Console.WriteLine(prompt);
+            string retval = Console.ReadLine();
+            return retval;
+        }
+
+        public string AskNameNonStatic()
+        {
+            Console.WriteLine("Give your name:");
+            string retval = Console.ReadLine();
+            return retval;
+        }
+    }
+
+    public class TestPeti
+    {
+        public static string AskName()
+        {
+            Console.WriteLine("Give your name:");
+            string retval = Console.ReadLine();
+            return retval;
+        }
+
+        public static void TestDifferentMethods()
+        {
+            string retval;
+
+            // method is in this same class
+            // can be called only with method name or ClassName.MethodName like below
+            retval = TestPeti.AskName();
+            Console.WriteLine("Your name is  {0} told method in same class.", retval);
+            // or without classname  
+            retval = AskName();
+            Console.WriteLine("Your name is {0} told method in same class.", retval);
+
+            // static method in some other class 
+            // classname or namespace.classname.methodname has to be used
+            retval = Asker.AskName();
+            Console.WriteLine("Your name is {0} told static method.", retval);
+
+            // call overload static method      
+            retval = Asker.AskName("Give your name again");
+            Console.WriteLine("Your name is {0} told overload static method.", retval);
+
+            // how to call non-static method? yes it is not class based method, is belongs to object       
+            // you need to create an object and then call method, but NOW it is better to use static one (in this example)
+            Asker asker = new Asker();
+            retval = asker.AskNameNonStatic();
+            Console.WriteLine("Your name is {0} told object method.", retval);
+        }
+
+        public static void Main()
+        {
+            TestDifferentMethods();
         }
     }
 }

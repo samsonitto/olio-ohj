@@ -13,21 +13,15 @@ namespace T1
             FirePlace harvia = new FirePlace();
             harvia.Name = "Harvia";
             harvia.Power = true;
-            harvia.IncHeat();
-            harvia.IncHeat();
-            harvia.IncHeat();
-            harvia.IncHeat();
-            harvia.IncHeat();
-            harvia.IncHeat();
-            harvia.IncHeat();
+            harvia.Loyly();
+            harvia.Loyly();
+            harvia.Loyly();
+            harvia.Loyly();
+            harvia.Loyly();
 
-            harvia.IncHum();
-            harvia.IncHum();
-            harvia.IncHum();
-            harvia.IncHum();
-            harvia.IncHum();
-            harvia.IncHum();
-            harvia.IncHum();
+
+            harvia.Wait();
+
 
             harvia.PrintData();
 
