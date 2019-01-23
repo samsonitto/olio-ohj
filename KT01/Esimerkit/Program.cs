@@ -228,6 +228,7 @@ namespace Jamk.It
 
 // Esimerkki 7 Esimerkki staattisten metodien kutsumisesta
 
+/*
 using System;
 namespace Jamk.It
 {
@@ -300,3 +301,6 @@ namespace Jamk.It
         }
     }
 }
+*/
+
+//
