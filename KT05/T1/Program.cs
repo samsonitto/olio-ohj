@@ -63,7 +63,7 @@ namespace T1
 
         public override string ToString()
         {
-            return base.ToString() + ", Car: " + ", Bonus: " + Bonus;
+            return base.ToString() + ", Car: " + Car + ", Bonus: " + Bonus;
         }
     }
 }
