@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace T1
 {
@@ -43,6 +44,7 @@ namespace T1
 
         public static bool OnkoPvm(string pvm)
         {
+            CultureInfo myCIintl = new CultureInfo("fi-FI");
 
             if (pvm[1] != '.' && pvm[2] != '.')
             {
