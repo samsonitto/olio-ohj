@@ -13,8 +13,8 @@ namespace T1
             // ask number from the user (read one line)
             while (true)
             {
-                //Console.Write("Give a number > ");
-                //Check.OnkoLuku(Console.ReadLine());
+                Console.Write("Give a number > ");
+                Check.OnkoLuku(Console.ReadLine());
 
                 Console.Write("Give a date > ");
                 Check.OnkoPvm(Console.ReadLine());
