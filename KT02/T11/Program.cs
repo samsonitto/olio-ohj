@@ -13,7 +13,7 @@ namespace T11
         static void Main(string[] args)
         {
             int caseSwitch = 0;
-            List<Results> r = new List<Results>();  // uusi taulukko, joka pohjautuu Results-luokkaan
+            List<Results> r = new List<Results>();  // uusi lista, joka pohjautuu Results-luokkaan
 
             while (caseSwitch!=6) // Ohjelma pyörii siihen asti kun käyttäjä painaa valikossa "6"
             {
