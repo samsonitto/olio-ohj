@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T5_T6", "T5\T5_T6.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7", "T7\T7.csproj", "{44650955-D108-4619-8FB9-13993A154075}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESIMERKIT", "ESIMERKIT\ESIMERKIT.csproj", "{0F52BAE1-6C15-476A-B32B-2795E88EB42F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{44650955-D108-4619-8FB9-13993A154075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44650955-D108-4619-8FB9-13993A154075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44650955-D108-4619-8FB9-13993A154075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F52BAE1-6C15-476A-B32B-2795E88EB42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F52BAE1-6C15-476A-B32B-2795E88EB42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F52BAE1-6C15-476A-B32B-2795E88EB42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F52BAE1-6C15-476A-B32B-2795E88EB42F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

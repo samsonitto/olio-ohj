@@ -46,7 +46,6 @@ namespace T7
 
             }
 
-
             stopWatch.Start();
             foreach (Person item in people)
             {
@@ -59,8 +58,31 @@ namespace T7
             Console.WriteLine(elapsedTime);
 
 
+            Console.WriteLine("Löydetty:");
 
+            for (int y = 0; y < 1000; y++)
+            {
+                StringBuilder haku = new StringBuilder(4);
+                for (int j = 0; j < 4; j++)
+                {
+                    r = ran.Next(25);
+                    haku.Append(alphabet[r]);
+                    
+                }
+
+                foreach (Person a in people)
+                {
+                    if(haku.ToString() == a.Enimi)
+                    {
+                        Console.WriteLine(haku + " " + a.Snimi);
+                    }
+                }
+            }
+
+            
         }
+
+
     }
 
     public class Person
