@@ -25,14 +25,14 @@ namespace T4
             
             while(true)
             {
-                Console.Write("Give a number (a ends) > ");
+                Console.Write("Give a number (enter ends) > ");
                 value = Console.ReadLine();
                 
                 if (int.TryParse(value, out numInt))
                 {
                     iList.Add(numInt);
                 }
-                else if (value == "a")
+                else if (value == "")
                 {
                     break;
                 }

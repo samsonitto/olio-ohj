@@ -1,3 +1,12 @@
+/*
+ Tee delegaateilla ohjelma, jolla k‰ytt‰j‰ syˆtt‰‰ merkkijonon. Sen j‰lkeen k‰ytt‰j‰ voi valita yhden tai useamman toiminnon jota merkkijonolle tehd‰‰n. Merkkijonolle pit‰‰ pysty‰ tekem‰‰n seuraavat toiminnot:
+- muuttaa merkkijonon kaikki kirjaimet isoiksi kirjaimiksi
+- muuttaa merkkijonon kaikki kirjaimet pieniksi kirjaimiksi
+- muuttaa merkkijonon Otsikko-tyyllin, eli ensimm‰inen merkki isolla ja loput pienell‰
+- k‰‰nt‰‰ merkkijonon toistep‰in eli sanasta Teppo tulee oppeT.
+Eli toteuta kutakin muunnosta varten oma metodi (kaikilla metodeilla t‰ytyy olla sama signature). Luo delegaatista instanssi ja kiinnit‰ siihen tarvittavat metodit. Voil·.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

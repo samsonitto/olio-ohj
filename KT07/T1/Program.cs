@@ -1,3 +1,14 @@
+/*
+Tehtävä 1 - MiniASIO
+Vaihe 1
+Toteutetaan opettajan kanssa yhdessä konsolipohjainen MiniASIO-ohjelma, jolla voidaan lisätä, poistaa ja hakea opiskelijoiden tietoja. Luo Opiskelija-luokka, jolla on ominaisuudet Etunimi, Sukunimi, AsioID ja Ryhmä.
+AsioID on aina uniikki, yksilöllinen. Lisää rekisteriin aluksi neljän testi-oppilaan tiedot: Masa Niemi, Allan Aalto, Hanna Husso ja Teppo Testaaja.
+
+Vaihe 2
+Lisää sen jälkeen toiminnallisuus, jolla kysytään käyttäjältä lisättävän opiskelijan tiedot. Opiskelija-olio lisätään listaan,
+jos samalla AsioID:lle olevaa opiskelijaa ei ole vielä listassa. Joten toteuta tarkistus, ettei annettua asioid:tä ole jo rekisterissä.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,14 +62,11 @@ namespace T1
                         {
                             Console.Write("AsioID: ");
                             inputID = Console.ReadLine();
-                            //arvo = false;
                             Console.WriteLine(inputID);
                             foreach (Opiskelija o in miniAsio)
                             {
-                                //Console.WriteLine(o);
                                 if (o.AsioID == inputID)
                                 {
-                                    //Console.WriteLine(o.AsioID);
                                     arvo = true;
                                     Console.WriteLine("AsioID {0} on jo käytössä", inputID);
                                     break;
@@ -70,12 +78,6 @@ namespace T1
                                     break;
                                 }
                             }
-
-                            //if (arvo)
-                            //{
-                                
-                            //}
-                            //else { break; }
                         }
 
                         Console.Write("Ryhmä: ");
@@ -99,8 +101,6 @@ namespace T1
                         {
                             Console.WriteLine(o.ToString());
                         }
-                        //Console.Clear();
-                        //asio.PrintData();
                         break;
                     case 3:
                         Console.WriteLine(miniAsio.ElementAt(0).ToString()); // 1 opiskelija
@@ -145,25 +145,5 @@ namespace T1
                 return string.Format("{0} {1} {2} {3}", Enimi, Snimi, AsioID, Ryhma);
             }
         }
-
-        //public class MiniASIO
-        //{
-            
-
-        //    public MiniASIO()
-        //    {
-
-        //    }
-
-
-        //    public void PrintData()
-        //    {
-        //        Console.WriteLine("The all students in MiniASIO:");
-        //        //foreach (Opiskelija item in miniAsio)
-        //        //{
-        //        //    Console.WriteLine(item.ToString());
-        //        //}
-        //    }
-        //}
     }
 }

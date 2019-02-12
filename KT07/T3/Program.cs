@@ -1,3 +1,8 @@
+/*
+Toteuta ohjelma, joka tallentaa kaikki korttipelin kortit (hertta, ruutu, risti ja pata. Numerot 1-52.) valitsemaasi tietorakenteeseen ja tulostaa tietorakenteen sisällön.
+Kuinka voisit toteuttaa korttipakan sekoittamisen? Toteuta Korttipakka-luokalle Shuffle-metodi, joka sekoittaa pakan kortit satunnaiseen järjestykseen.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +16,6 @@ namespace T3
         static void Main(string[] args)
         {
             Random ran = new Random();
-            //List<Card> pakka = new List<Card>();
             List<string> pakka = new List<string>();
             Card p = new Card("p");
             Card h = new Card("h");
@@ -70,15 +74,5 @@ namespace T3
         {
             Maa = maa;
         }
-
-        //public List<Card> nrot = new List<Card>();
-
-        //public override string ToString()
-        //{
-        //    return string.Format(Maa + Nro);
-        //}
     }
-
-
-
 }

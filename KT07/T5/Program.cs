@@ -1,3 +1,12 @@
+/*
+ Toteuta ohjelma, jolla voidaan lisätä, poistaa ja listata SM-Liiga-joukkueen Kalpan pelaajia.
+ Luo Pelaaja-luokka, jolla on ominaisuudet Etunimi, Sukunimi, Kätisyys ja Numero. Löydät täältä Kalpa pelaajat.
+ Luo myös Joukkue-luokka. Luokalla on ominaisuudet Nimi, Kotikaupunki ja Pelaajat. Ominaisuus Pelaajat on siis lista Pelaaja-olioita.
+ Tee Joukkue-luokalle sisäinen metodi HaePelaajat(string joukkue), jota konstruktori kutsuu. HaePelaajat metodi luo Pelaajat-listaan oikeat pelaajat.
+
+ Missä ja miten pitäisit pelaajatietoja tallessa silloin, kun ohjelma ei ole käynnissä? Listaa erilaiset vaihtoehdot. Toteuta niistä tekstitiedosto-pohjainen ratkaisu.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,15 +95,8 @@ namespace T5
 
         public void AddPlayer()
         {
-            //Console.Write("Total amount of songs: ");
-            //songCounter = int.Parse(Console.ReadLine());
 
-            //Console.Write("Add song? y/n > ");
-            //string input = Console.ReadLine();
-
-
-            //Console.Write("Lisää pelaaja? y/n > ");
-            string input = "y";//Console.ReadLine();
+            string input = "y";
 
             while (input == "y")
             {
@@ -155,13 +157,13 @@ namespace T5
 
         public void Open()
         {
-            var lines = System.IO.File.ReadAllLines("G:\\Olio\\KT07\\T5\\bin\\Debug\\jyp.txt"); // var-tyyppinen lines muuttuja on kaikki csv:n rivit, paitsi ylin rivi
+            var lines = System.IO.File.ReadAllLines("G:\\Olio\\KT07\\T5\\bin\\Debug\\jyp.txt"); 
 
             foreach (string item in lines)
             {
-                var values = item.Split(' '); // pilkkoo rivin
+                var values = item.Split(' ');
 
-                pelaajat.Add(new Pelaaja() // lisää pelaajat taulukkoon tiedot
+                pelaajat.Add(new Pelaaja()
                 {
                     Etunimi = values[0],
                     Sukunimi = values[1],
