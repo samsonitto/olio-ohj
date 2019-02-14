@@ -11,30 +11,32 @@ namespace T3
         static void Main(string[] args)
         {
             int input = 0;
-            List<string> fishRegistry = new List<string>();
+            List<Fisherman> fisherman = new List<Fisherman>();
+            List<Fish> fish = new List<Fish>();
+            int id = 0;
 
-            while (input != 3)
+            while (input != 4)
             {
                 Console.WriteLine("\n**************|");
                 Console.WriteLine("KALAREKISTERI |");
                 Console.WriteLine("______________|");
                 Console.WriteLine("1. Lisää kalastaja ja sen kalat");
-                Console.WriteLine("2. Tulosta kalarekisteri");
-                Console.WriteLine("3. Sulje ohjelma");
+                Console.WriteLine("2. Tulosta kalastajarekisteri");
+                Console.WriteLine("3. Tulosta kalarekisteri painon mukaan lajiteltuna");
+                Console.WriteLine("4. Sulje");
                 Console.Write("Valintasi > ");
                 input = int.Parse(Console.ReadLine());
 
+                
                 if (input == 1)
                 {
-
+                    
                     Console.Write("Anna kalastajan nimi > ");
                     string inputName = Console.ReadLine();
                     Console.Write("Anna kalastajan puhnro > ");
                     string inputPhone = Console.ReadLine();
-
-                    fishRegistry.Add(new Fisherman() { Name = inputName, Phone = inputPhone }.ToString());
-
-
+                    id++;
+                    fisherman.Add(new Fisherman() { Name = inputName, Phone = inputPhone, ID = id });
 
                     string inputFish = "y";
 
@@ -51,7 +53,7 @@ namespace T3
                         Console.Write("Anna kalastussijainti > ");
                         string inputLocation = Console.ReadLine();
 
-                        fishRegistry.Add(new Fish() { Type = inputType, Lenght = inputHeight, Weight = inputWeight, Place = inputPlace, Location = inputLocation }.ToString());
+                        fish.Add(new Fish() { Type = inputType, Lenght = inputHeight, Weight = inputWeight, Place = inputPlace, Location = inputLocation, FishID = id });
 
                         Console.Write("Lisää kala? y/n > ");
                         inputFish = Console.ReadLine();
@@ -62,9 +64,32 @@ namespace T3
 
                 if (input == 2)
                 {
-                    foreach (string item in fishRegistry)
+                    foreach(Fisherman fm in fisherman)
                     {
-                        Console.WriteLine(item);
+                        Console.WriteLine(fm.ToString());
+                        foreach(Fish f in fish)
+                        {
+                            if(f.FishID == fm.ID)
+                            {
+                                Console.WriteLine(f.ToString());
+                            }
+                        }
+                    }
+                }
+
+                if (input == 3)
+                {
+                    List<Fish> sortedFish = fish.OrderBy(o => o.Weight).ToList();
+                    foreach (Fish f in sortedFish)
+                    {
+                        Console.WriteLine(f.ToString());
+                        foreach(Fisherman fm in fisherman)
+                        {
+                            if (fm.ID == f.FishID)
+                            {
+                                Console.WriteLine("- Fisherman: " + fm.Name);
+                            }
+                        }
                     }
                 }
 
@@ -77,6 +102,8 @@ namespace T3
         public string Name { get; set; }
         public string Phone { get; set; }
 
+        public int ID { get; set; }
+
 
 
         //public List<Fisherman> fisherman = new List<Fisherman>();
@@ -86,6 +113,7 @@ namespace T3
         {
 
         }
+
 
         public override string ToString()
         {
@@ -101,12 +129,15 @@ namespace T3
         public string Place { get; set; }
         public string Location { get; set; }
 
+        public int FishID { get; set; }
+
         //public List<Fish> fish = new List<Fish>();
 
         public Fish()
         {
 
         }
+
 
         public override string ToString()
         {
